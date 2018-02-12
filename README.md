@@ -12,16 +12,13 @@ This bot was created with the intention to use it for FiveM communities that pre
 
 # Using the Discord-UserJoinAnnounce
 
-**1. Download** 
-Get the latest Windows/Linux build of Discord-UserJoinAnnounce from the [releases](https://github.com/JoshuaDoes/discord-userjoinannounce/releases) page.
-
-**2. Bot User**
+**1. Bot User**
 Create a bot user and note down the bot token, then invite the bot to the target
 server and the announcement server.
 
 ------------------------------------------------------------------
 
-# Create the bot
+**2. Create the bot**
 
 Creating a bot in discord is stupid easy. First you need to go to [here](https://discordapp.com/developers/applications/me) and click "New Application"
 ![Application Screen](http://i.imgur.com/FvgfY2Z.png)
@@ -45,24 +42,7 @@ with the Client ID from the page above under App Details, then paste the link in
 Now select your server in the dropdown, then click "Authorize".
 ![Authorized](http://i.imgur.com/4cqNcs1.png)
 
-That's it! Now you can start your bot and enjoy chatting!
-
-**IMPORTANT: you should NEVER give your bot's token to anybody you do not trust, and never EVER under any circumstances push it to a public Git repo where everyone can see it.** 
-
-The token gives you full access to your bot account's permissions, so if somebody gains access to it maliciously they could do any number of bad things with the bot
-this includes leaving all of its guilds (servers), spamming unfavorable links or messages in text channels, deleting messages/channels in guilds where it has moderator permissions, 
-and other nasty stuff along those lines. Keep it a secret!  
-
-However, if your token ever does get compromised or you suspect it has been, the very first thing you should do is [go to its Discord Apps page](https://discordapp.com/developers/applications/me), 
-press "click to reveal" in the App Bot User section, then click "Generate a new token?" and "Yes, do it!" in the confirmation dialog. 
-This will give you a unique, brand-new token that you can update your bot's code with.  
-!["Generate a new token?" link. The token is fake, don't worry.](https://i.imgur.com/ti4S2V8.png)  
-![Confirmation dialog for generating new token](https://i.imgur.com/HJmzUk1.png)
-
-Afterwards, take the appropriate measures to place this new token in a secure place where it can't be leaked or compromised again. If you would like to open-source your bot's code without disclosing its token, 
-you can store the token in a separate file (which your bot can load the token from), then add this file to .gitignore to ensure that it isn't published along with the rest of your bot. 
- 
-Good luck!
+That's it! Now you can start your bot
 
 -------------------------------------------------------------------------
 
@@ -73,7 +53,10 @@ Good luck!
 - Scroll down to the "Advanced" section and turn on "Developer Mode"
 - This may require you to restart Discord
 
-**4. Configuration:**
+**4. Download** 
+Get the latest Windows/Linux build of Discord-UserJoinAnnounce from the [releases](https://github.com/JoshuaDoes/discord-userjoinannounce/releases) page.
+
+**5. Configuration:**
 - Create a file called `config.json` in the same directory as Discord-UserJoinAnnounce bot.
 - Use the below configuration template to set it up.
 
@@ -88,7 +71,7 @@ Good luck!
 }
 ```
 
-**5. Getting your ID's:**
+**6. Getting your ID's:**
 - Do step 3 above
 - Right click your target server and select "Copy ID" at the bottom and paste in the config file
 - Right click your announcement server and select "Copy ID" at the bottom and paste in the config file
@@ -98,12 +81,12 @@ Good luck!
 **Note**
 The bot and config files can exist anywhere on your server, but must be kept together.
 
-**6. Permissions**
+**7. Permissions**
 - Linux - ```chmod 0755 linux-discord-userjoinannounce-x64``` or ```chmod 0755 linux-discord-userjoinannounce-x86```
 - Windows - owner: r,w,x
 	  - everyone else: r,x
 
-**7. Starting the bot**
+**8. Starting the bot**
 - Windows versions, just run the .exe
 - Linux
 	- Create a new screen - ```screen -S bot```
@@ -116,8 +99,16 @@ The bot and config files can exist anywhere on your server, but must be kept tog
 # How does it work?
 
 After the bot is invited to your target and announce Discord servers, it will
-immediately begin listening for member join/leave events from the target server to
+immediately begin listening for new member join events from the target server to
 announce them in the announce server's announce channel.
+
+Make sure you bot has any roles and permissions needed to view, post, and attach files
+in the announcement channel.
+
+---------------------------------------------------------------------
+
+**NOTE**
+This bot isn't complete.  The finished version will have a working announcement of when a user quits the target server
 
 ----
 
