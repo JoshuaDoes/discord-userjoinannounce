@@ -91,7 +91,9 @@ func main() {
 
 func ready(session *discordgo.Session, event *discordgo.Ready) {
 	fmt.Println("> Discord is now ready.")
-	
+}
+
+func guildMemberAdd(session *discordgo.Session, member *discordgo.GuildMemberAdd) {
 	targetServerDetails, err := guildDetails(targetServer, session)
 	if err != nil {
 		debugLog("> Error getting target server name.")
@@ -100,9 +102,7 @@ func ready(session *discordgo.Session, event *discordgo.Ready) {
 		targetServerName = targetServerDetails.Name
 		debugLog("> Found target server name: " + targetServerName)
 	}
-}
 
-func guildMemberAdd(session *discordgo.Session, member *discordgo.GuildMemberAdd) {
 	if member.GuildID == targetServer {
 		joinedAt := member.JoinedAt
 		userID := member.User.ID
@@ -150,6 +150,15 @@ func guildMemberAdd(session *discordgo.Session, member *discordgo.GuildMemberAdd
 }
 
 func guildMemberRemove(session *discordgo.Session, member *discordgo.GuildMemberRemove) {
+	targetServerDetails, err := guildDetails(targetServer, session)
+	if err != nil {
+		debugLog("> Error getting target server name.")
+		targetServerName = "the target server"
+	} else {
+		targetServerName = targetServerDetails.Name
+		debugLog("> Found target server name: " + targetServerName)
+	}
+
 	if member.GuildID == targetServer {
 		joinedAt := member.JoinedAt
 		userID := member.User.ID
