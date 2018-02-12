@@ -7,6 +7,7 @@ This bot was created with the intention to use it for FiveM communities that pre
 **In these directions:**
 - target = The server you want the bot to watch
 - announcement = The server you want the bot to announce to
+- Bot files available in the **[releases](https://github.com/JoshuaDoes/discord-userjoinannounce/releases)** page.
 
 ----
 
@@ -53,8 +54,8 @@ That's it! Now you can start your bot
 - Scroll down to the "Advanced" section and turn on "Developer Mode"
 - This may require you to restart Discord
 
-**4. Download** 
-Get the latest Windows/Linux build of Discord-UserJoinAnnounce from the [releases](https://github.com/JoshuaDoes/discord-userjoinannounce/releases) page.
+**4. Download:** 
+- Get the latest Windows/Linux build of Discord-UserJoinAnnounce from the **[releases](https://github.com/JoshuaDoes/discord-userjoinannounce/releases)** page.
 
 **5. Configuration:**
 - Create a file called `config.json` in the same directory as Discord-UserJoinAnnounce bot.
