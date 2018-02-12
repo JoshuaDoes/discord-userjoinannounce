@@ -1,21 +1,26 @@
 # discord-userjoinannounce
 
-In these directions:
+This bot was created with the intention to use it for FiveM communities that prefer using Discord over other chat programs. This allows for the community to have a "babysitter" in their interview or public server to let you know when someone new joins without actually needing to sit in it.
 
-target = The server you want the bot to watch
+----------------------------------------------------------------
 
-announcement = The server you want the bot to announce to
+**In these directions:**
+- target = The server you want the bot to watch
+- announcement = The server you want the bot to announce to
 
 ----
 
-# Using the official up-to-date version of Discord-UserJoinAnnounce
+# Using the Discord-UserJoinAnnounce
 
-1. Download the latest Windows/Linux build of Discord-UserJoinAnnounce from the [releases](https://github.com/JoshuaDoes/discord-userjoinannounce/releases) page.
+**1. Download** 
+Get the latest Windows/Linux build of Discord-UserJoinAnnounce from the [releases](https://github.com/JoshuaDoes/discord-userjoinannounce/releases) page.
 
-2. Create a bot user and note down the bot token, then invite the bot to the target
+**2. Bot User**
+Create a bot user and note down the bot token, then invite the bot to the target
 server and the announcement server.
 
 ------------------------------------------------------------------
+
 # Create the bot
 
 Creating a bot in discord is stupid easy. First you need to go to [here](https://discordapp.com/developers/applications/me) and click "New Application"
@@ -62,14 +67,15 @@ Good luck!
 -------------------------------------------------------------------------
 
 
-3. Enable developer mode on your Discord client and note down the server ID of the
-server you'd like to target, the server ID of the server you'd like to announce to,
-and the channel ID of the channel you'd like to announce to.
+**3. Enable developer mode on your Discord client:**
+- Click the cog in the bottom left, near the speaker icon
+- On the left side of the new window, click "Appearance"
+- Scroll down to the "Advanced" section and turn on "Developer Mode"
+- This may require you to restart Discord
 
-4. Create a file called `config.json` in the same directory as Discord-UserJoinAnnounce.
-Use the below configuration template to set it up.
-
-5. Run Discord-UserJoinAnnounce and enjoy!
+**4. Configuration:**
+- Create a file called `config.json` in the same directory as Discord-UserJoinAnnounce bot.
+- Use the below configuration template to set it up.
 
 **Configuration template:**
 ```JSON
@@ -78,9 +84,34 @@ Use the below configuration template to set it up.
 	"targetServer": "the target server ID",
 	"announceServer": "the announce server ID",
 	"announceChannel": "the announce channel ID",
-	"debugMode": true
+	"debugMode": false
 }
 ```
+
+**5. Getting your ID's:**
+- Do step 3 above
+- Right click your target server and select "Copy ID" at the bottom and paste in the config file
+- Right click your announcement server and select "Copy ID" at the bottom and paste in the config file
+- Right click the text channel you want the bot to make the announcement in and paste in the config file
+- Save your config file
+
+**Note**
+The bot and config files can exist anywhere on your server, but must be kept together.
+
+**6. Permissions**
+- Linux - ```chmod 0755 linux-discord-userjoinannounce-x64``` or ```chmod 0755 linux-discord-userjoinannounce-x86```
+- Windows - owner: r,w,x
+	  - everyone else: r,x
+
+**7. Starting the bot**
+- Windows versions, just run the .exe
+- Linux
+	- Create a new screen - ```screen -S bot```
+	- Change to the bot directory - ```cd /<path to bot folder>/```
+	- Start the bot ```./linux-discord-userjoinannounce-x86``` or ```./linux-discord-userjoinannounce-x64```
+	- Detach the screen - **Ctrl+a** then **d**
+	- To reopen the screen ```screen -r bot```
+
 
 # How does it work?
 
